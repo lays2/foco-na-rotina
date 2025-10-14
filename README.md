@@ -25,3 +25,12 @@ Resolver a Desorganização: Fornecer uma plataforma centralizada para o registr
 Gerar Clareza Inicial (com IA): Utilizar dados de tempo de estudo para gerar relatórios simples de distribuição de tempo e enviar lembretes básicos de revisão.
 
 Validar a Arquitetura: Finalizar e publicar a API Backend (rotas de usuário, metas e registro de sessões) para suportar as funcionalidades essenciais
+
+## 🛠️ Tecnologias Utilizadas
+
+| Categoria | Tecnologia |
+| :--- | :--- |
+| **Backend** | Node.js, Express, TypeScript |
+| **Database** | MongoDB (via Mongoose) |
+| **Frontend**| React |
+| **CI/CD** | GitHub Actions |

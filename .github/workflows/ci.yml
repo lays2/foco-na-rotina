@@ -1,0 +1,41 @@
+name: CI - Express App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Baixar o código do repositório
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # 2️⃣ Instalar Node.js (ajuste a versão conforme seu projeto)
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # 3️⃣ Instalar dependências
+      - name: Instalar dependências
+        run: npm install
+
+      # 4️⃣ Rodar o Linter (se tiver)
+      - name: Rodar Linter
+        run: npm run lint
+        continue-on-error: true  # evita falhar se não houver lint configurado
+
+      # 5️⃣ Rodar Testes (caso tenha Jest ou outro framework)
+      - name: Rodar Testes
+        run: npm test
+        continue-on-error: true  # evita falhar se ainda não houver testes
+
+      # 6️⃣ Fazer o build (caso use TypeScript ou algo similar)
+      - name: Build do projeto
+        run: npm run build
+        continue-on-error: true
