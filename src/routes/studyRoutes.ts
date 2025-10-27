@@ -1,10 +1,16 @@
+// src/routes/studyRoutes.ts
+
 import { Router } from 'express';
-import { getUsers, createUser } from '../controller/usercontroller';
+import { UserController } from '../controller/usercontroller'; // Assumindo um StudyController
 
 const router = Router();
+const studyController = new UserController();
 
-router.get('/', getUsers);
 
-router.post('/', createUser);
+router.get('/', studyController.getAllStudies);
+router.get('/:id', studyController.getStudyById);
+router.post('/', studyController.createStudy);
+router.put('/:id', studyController.updateStudy);
+router.delete('/:id', studyController.deleteStudy);
 
-export default router;
+export const studyRoutes = router;

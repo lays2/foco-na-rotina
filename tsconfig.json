@@ -1,0 +1,29 @@
+{
+  "name": "meu-projeto-ts",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "npx ts-node src/index.ts",
+    "build": "npx tsc"
+  },
+    "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "dependencies": {
+    "dotenv": "^...",
+    "express": "^...",
+    "typeorm": "^...",
+    "mongodb": "^...",
+    "cors": "^...",
+    "reflect-metadata": "^..."
+  },
+  "devDependencies": {
+    "@types/cors": "^...",
+    "@types/express": "^...",
+    "@types/node": "^...",
+    "ts-node": "^...",
+    "typescript": "^..."
+  }
+}

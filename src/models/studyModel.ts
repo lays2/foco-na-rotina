@@ -1,15 +1,30 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import { Entity, ObjectIdColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { ObjectId } from 'mongodb'; 
 
-export interface IStudy extends Document {
+@Entity('studies') 
+export class Study {
+
+  @ObjectIdColumn() 
+  id: ObjectId; 
+
+  @Column()
   title: string;
+
+  @Column()
   description: string;
-  duration: number;
+
+  @Column()
+  subject: string; 
+
+  @Column({ default: 0 })
+  durationMinutes: number; 
+
+  @Column({ default: false })
+  completed: boolean;
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
 }
-
-const StudySchema = new Schema<IStudy>({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  duration: { type: Number, required: true }
-});
-
-export const StudyModel = mongoose.model<IStudy>('Study', StudySchema);
