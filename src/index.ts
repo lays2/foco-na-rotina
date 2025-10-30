@@ -4,9 +4,9 @@ import * as cors from 'cors';
 import * as dotenv from 'dotenv';
 
 // 2. Importar as configurações e rotas
-import { connectDatabase } from '../foco-na-rotina/src/config/database';
-import { studyRoutes } from '../foco-na-rotina/src/routes/studyRoutes';
-import { UserController } from './src/controller/usercontroller'; 
+import { connectDatabase } from './config/database';
+import { studyRoutes } from './routes/studyRoutes';
+import { UserController } from './controller/usercontroller'; 
 dotenv.config();
 
 const app = express();

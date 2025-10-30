@@ -1,27 +1,21 @@
-// src/config/database.ts (Adaptado para MongoDB)
-
 import { createConnection, ConnectionOptions } from 'typeorm';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-// O TypeORM usa 'mongodb' como tipo de driver para MongoDB
 const databaseConfig: ConnectionOptions = {
   type: 'mongodb', 
   
-  // A URL de conexão é a maneira mais comum de configurar o MongoDB
-  url: process.env.MONGO_URL || 'mongodb://localhost:27017/seu_banco_de_dados_mongodb',
+  url: process.env.MONGO_URL || 'mgo_uri=mongodb+srv://santoslays67_db_user:1aVwDrQV1hcCAhN2@cluster0.pcm2qk9.mongodb.net/?appName=Cluster0on',
   
-  // As entidades TypeORM serão mapeadas para "Collections" no MongoDB
+  
   entities: [__dirname + '/../models/**/*.ts'], 
   
-  // O MongoDB não usa o conceito de "sincronização de esquema" como SQL, 
-  // mas esta opção ainda é necessária.
   synchronize: true, 
   
   logging: false,
   
-  // (Opcional) Adicione mais opções de conexão se necessário
+
   extra: {
     useUnifiedTopology: true,
   },

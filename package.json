@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
+    "express": "^5.1.0",
     "mongodb": "^6.20.0",
     "typeorm": "^0.3.27"
   },
@@ -13,7 +15,7 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "dev": "nodemon --exec ts-node \"PROJETO FINAL - PRETALAB/foco-na-rotina/index.ts\"",
-    "start": "ts-node \"PROJETO FINAL - PRETALAB/foco-na-rotina/index.ts\""
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "start": "ts-node src/index.ts"
   }
 }
